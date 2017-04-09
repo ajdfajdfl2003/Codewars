@@ -7,11 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFun31-IsSubstitutionC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreTheyTheSame", "AreTheyTheSame\AreTheyTheSame.csproj", "{728192B8-14A1-47FB-82F4-8D12857F1A4B}"
 EndProject
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvertValuesTest", "InvertValuesTest\InvertValuesTest.csproj", "{242C1627-D28F-49F5-90AF-105FC063129D}"
 EndProject
-=======
->>>>>>> b2692e356e8ec9cdb22699ef5ba622aec795e7d8
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescendingOrder", "DescendingOrder\DescendingOrder.csproj", "{B578F1C5-689C-4328-9F31-64A12FD8F7FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,13 +25,14 @@ Global
 		{728192B8-14A1-47FB-82F4-8D12857F1A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{728192B8-14A1-47FB-82F4-8D12857F1A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{728192B8-14A1-47FB-82F4-8D12857F1A4B}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{242C1627-D28F-49F5-90AF-105FC063129D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{242C1627-D28F-49F5-90AF-105FC063129D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{242C1627-D28F-49F5-90AF-105FC063129D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{242C1627-D28F-49F5-90AF-105FC063129D}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
->>>>>>> b2692e356e8ec9cdb22699ef5ba622aec795e7d8
+		{B578F1C5-689C-4328-9F31-64A12FD8F7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B578F1C5-689C-4328-9F31-64A12FD8F7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B578F1C5-689C-4328-9F31-64A12FD8F7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B578F1C5-689C-4328-9F31-64A12FD8F7FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
