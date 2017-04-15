@@ -1,45 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace GreedIsGood
 {
     public class Kata
     {
-        private readonly Dictionary<string, int> _scoreTable = new Dictionary<string, int>
-            {
-                {"111", 1000},
-                {"666", 600},
-                {"555", 500},
-                {"444", 400},
-                {"333", 300},
-                {"222", 200},
-                {"1", 100},
-                {"5", 50}
-            };
-
-        public int Score(int[] throwDice)
+        public int Score(int[] dice)
         {
-            var orderThrowDice = throwDice.OrderBy(x => x).Select(x => x).ToArray();
-            var stringDice = orderThrowDice.Aggregate("", (current, dice) => current + dice);
+            var tripleValue = new int[] { 0, 1000, 200, 300, 400, 500, 600 };
+            var singleValue = new int[] { 0, 100, 0, 0, 0, 50, 0 };
+
             var score = 0;
-            for (var i = 0; i < stringDice.Length;)
+            for (var dieSide = 1; dieSide <= 6; dieSide++)
             {
-                var countOfDice = stringDice.Count(x => x.Equals(stringDice[i]));
-                var dice = "";
-                if (countOfDice / 3 > 0)
-                {
-                    dice = stringDice.Substring(0, 3);
-                    stringDice = stringDice.Remove(0, 3);
-                }
-                else
-                {
-                    dice = stringDice.Substring(0, 1);
-                    stringDice = stringDice.Remove(0, 1);
-                }
-                if (this._scoreTable.ContainsKey(dice))
-                {
-                    score += this._scoreTable[dice];
-                }
+                var countRolls = dice.Where(outCome => outCome.Equals(dieSide)).Count();
+                score += tripleValue[dieSide] * (countRolls / 3) + singleValue[dieSide] * (countRolls % 3);
             }
             return score;
         }
