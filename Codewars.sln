@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescendingOrder", "Descendi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindTheNextPerfectSquareTest", "FindTheNextPerfectSquareTest\FindTheNextPerfectSquareTest.csproj", "{84970E6A-D583-4C29-B2BE-B78FA1C911AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedIsGood", "GreedIsGood\GreedIsGood.csproj", "{60594311-6A28-464B-BCD8-DDF552271DD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{84970E6A-D583-4C29-B2BE-B78FA1C911AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84970E6A-D583-4C29-B2BE-B78FA1C911AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84970E6A-D583-4C29-B2BE-B78FA1C911AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60594311-6A28-464B-BCD8-DDF552271DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60594311-6A28-464B-BCD8-DDF552271DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60594311-6A28-464B-BCD8-DDF552271DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60594311-6A28-464B-BCD8-DDF552271DD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
