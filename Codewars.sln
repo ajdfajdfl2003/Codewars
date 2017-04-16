@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindTheNextPerfectSquareTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedIsGood", "GreedIsGood\GreedIsGood.csproj", "{60594311-6A28-464B-BCD8-DDF552271DD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VasyaClerk", "VasyaClerk\VasyaClerk.csproj", "{38F50C2A-2D54-4099-8A4C-AE4B4EC22DFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{60594311-6A28-464B-BCD8-DDF552271DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60594311-6A28-464B-BCD8-DDF552271DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60594311-6A28-464B-BCD8-DDF552271DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F50C2A-2D54-4099-8A4C-AE4B4EC22DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F50C2A-2D54-4099-8A4C-AE4B4EC22DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F50C2A-2D54-4099-8A4C-AE4B4EC22DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F50C2A-2D54-4099-8A4C-AE4B4EC22DFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
