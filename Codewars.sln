@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerimeterOfSquaresInARectan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindFileInDirectories", "FindFileInDirectories\FindFileInDirectories.csproj", "{CC03D43D-E9A8-457E-A247-8B9F366A2427}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCalculator", "BitCalculator\BitCalculator.csproj", "{5B8B2DCA-A910-4BEA-B035-52AC3C6974D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{CC03D43D-E9A8-457E-A247-8B9F366A2427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC03D43D-E9A8-457E-A247-8B9F366A2427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC03D43D-E9A8-457E-A247-8B9F366A2427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8B2DCA-A910-4BEA-B035-52AC3C6974D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8B2DCA-A910-4BEA-B035-52AC3C6974D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8B2DCA-A910-4BEA-B035-52AC3C6974D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8B2DCA-A910-4BEA-B035-52AC3C6974D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
