@@ -1,14 +1,20 @@
 package com.angus.codewars;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class ShortestWordTest {
+    private Kata target;
+
+    @Before
+    public void setUp() {
+        this.target = new Kata();
+    }
+
     @Test
     public void GivenOneWord() {
-        Kata target = new Kata();
-
         String givenWord = "Kata";
         int actual = target.findShort(givenWord);
 
@@ -17,8 +23,6 @@ public class ShortestWordTest {
 
     @Test
     public void GivenTwoWord_Should_Return4() {
-        Kata target = new Kata();
-
         String givenWord = "bitcoin take";
         int actual = target.findShort(givenWord);
 
@@ -27,8 +31,6 @@ public class ShortestWordTest {
 
     @Test
     public void GivenTestCase_One_Should_Return3() {
-        Kata target = new Kata();
-
         String givenWord = "bitcoin take over the world maybe who knows perhaps";
         int actual = target.findShort(givenWord);
 
