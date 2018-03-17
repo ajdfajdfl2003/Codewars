@@ -1,8 +1,8 @@
 package com.angus.codewars;
 
 public class Kata {
-    public static int findShort(String givenWord) {
-        String[] splitWord = givenWord.split(" ");
+    public static int findShort(String s) {
+        String[] splitWord = s.split(" ");
 
         int shortest = 0;
         for (String word : splitWord) {
