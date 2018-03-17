@@ -14,6 +14,7 @@ public class Dinglemouse {
                     if (humanYears - 2 >= 0) {
                         cat = dog += 9;
                     }
+                    break;
             }
         }
         return new int[]{humanYears, cat, dog};
