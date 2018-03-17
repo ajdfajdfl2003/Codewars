@@ -15,6 +15,13 @@ public class Dinglemouse {
                         cat = dog += 9;
                     }
                     break;
+                case 2:
+                    int remain = humanYears - 2;
+                    if (remain >= 0) {
+                        cat += remain * 4;
+                        dog += remain * 5;
+                    }
+                    break;
             }
         }
         return new int[]{humanYears, cat, dog};
