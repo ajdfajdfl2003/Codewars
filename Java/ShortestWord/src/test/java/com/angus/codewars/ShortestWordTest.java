@@ -24,4 +24,14 @@ public class ShortestWordTest {
 
         assertEquals(4, actual);
     }
+
+    @Test
+    public void GivenTestCase_One_Should_Return3() {
+        Kata target = new Kata();
+
+        String givenWord = "bitcoin take over the world maybe who knows perhaps";
+        int actual = target.findShort(givenWord);
+
+        assertEquals(3, actual);
+    }
 }
