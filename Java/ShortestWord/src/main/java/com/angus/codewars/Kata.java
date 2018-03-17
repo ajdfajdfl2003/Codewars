@@ -9,9 +9,7 @@ public class Kata {
             if (shortest == 0) {
                 shortest = word.length();
             } else {
-                if (word.length() < shortest) {
-                    shortest = word.length();
-                }
+                shortest = Math.min(shortest, word.length());
             }
         }
 
