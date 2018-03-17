@@ -28,4 +28,9 @@ public class DinglemouseTest {
         int[] expected = new int[]{3, 28, 29};
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testGiven_TenYearOld_Should_Get_10_56_64() {
+        assertArrayEquals(new int[]{10, 56, 64}, Dinglemouse.humanYearsCatYearsDogYears(10));
+    }
 }
