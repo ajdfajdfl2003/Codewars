@@ -1,5 +1,10 @@
+import java.util.Arrays;
+
+import static java.util.stream.Collectors.joining;
+
 public class SpinWords {
     public String spinWords(String sentence) {
-        return new StringBuilder(sentence).reverse().toString();
+        return Arrays.stream(sentence.split(" ")).map(s -> s.length() >= 6 ? new StringBuilder(s).reverse()
+                .toString() : s).collect(joining(" "));
     }
 }
