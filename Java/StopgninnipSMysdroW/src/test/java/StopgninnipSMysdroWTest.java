@@ -22,4 +22,9 @@ public class StopgninnipSMysdroWTest {
     public void testThis_is_another_test() {
         assertEquals("This is rehtona test", new SpinWords().spinWords("This is another test"));
     }
+
+    @Test
+    public void testJust_gniddik_ereht_is_llits_one_more() {
+        assertEquals("Just gniddik ereht is llits one more", new SpinWords().spinWords("Just kidding there is still one more"));
+    }
 }
