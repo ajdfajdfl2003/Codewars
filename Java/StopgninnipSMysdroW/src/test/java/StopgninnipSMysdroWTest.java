@@ -17,4 +17,9 @@ public class StopgninnipSMysdroWTest {
     public void testThis_is_a_test() {
         assertEquals("This is a test", new SpinWords().spinWords("This is a test"));
     }
+
+    @Test
+    public void testThis_is_another_test() {
+        assertEquals("This is rehtona test", new SpinWords().spinWords("This is another test"));
+    }
 }
