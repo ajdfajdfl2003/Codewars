@@ -12,4 +12,9 @@ public class StopgninnipSMysdroWTest {
     public void testHey_wollef_sroirraw() {
         assertEquals("Hey wollef sroirraw", new SpinWords().spinWords("Hey fellow warriors"));
     }
+
+    @Test
+    public void testThis_is_a_test() {
+        assertEquals("This is a test", new SpinWords().spinWords("This is a test"));
+    }
 }
