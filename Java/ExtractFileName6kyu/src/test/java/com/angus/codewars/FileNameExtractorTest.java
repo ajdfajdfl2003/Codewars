@@ -6,6 +6,14 @@ import static org.junit.Assert.assertEquals;
 
 public class FileNameExtractorTest {
     @Test
+    public void testSample02() {
+        assertEquals(
+                "FILE_NAME.EXTENSION",
+                FileNameExtractor.extractFileName("1_FILE_NAME.EXTENSION.OTHEREXTENSIONadasdassdassds34")
+        );
+    }
+
+    @Test
     public void testSample01() {
         assertEquals(
                 "FILE_NAME.EXTENSION",
