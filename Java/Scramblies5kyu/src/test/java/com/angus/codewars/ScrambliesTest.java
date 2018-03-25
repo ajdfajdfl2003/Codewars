@@ -10,6 +10,11 @@ public class ScrambliesTest {
     }
 
     @Test
+    public void testCase_javscripts() {
+        testing(Scramblies.scramble("javscripts", "javascript"), false);
+    }
+
+    @Test
     public void testCase_scriptsjava() {
         testing(Scramblies.scramble("scriptsjava", "javascripts"), true);
     }
