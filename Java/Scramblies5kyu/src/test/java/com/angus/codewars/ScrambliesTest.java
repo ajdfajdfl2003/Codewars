@@ -10,8 +10,13 @@ public class ScrambliesTest {
     }
 
     @Test
+    public void testCase_katas() {
+        testing(Scramblies.scramble("katas", "steak"), false);
+    }
+
+    @Test
     public void testCase_cedewaraaossoqqyt() {
-        testing(Scramblies.scramble("cedewaraaossoqqyt","codewars"),true);
+        testing(Scramblies.scramble("cedewaraaossoqqyt", "codewars"), true);
     }
 
     @Test
