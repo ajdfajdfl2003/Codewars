@@ -6,6 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 public class FileNameExtractorTest {
     @Test
+    public void testSample04() {
+        assertEquals("myFile.tar"
+                , FileNameExtractor.extractFileName("1231231223123131_myFile.tar.gz2"));
+    }
+
+    @Test
     public void testSample03() {
         assertEquals("This_is_an_otherExample.mpg"
                 , FileNameExtractor.extractFileName("1_This_is_an_otherExample.mpg.OTHEREXTENSIONadasdassdassds34"));
