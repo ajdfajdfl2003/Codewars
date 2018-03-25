@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class FileNameExtractor {
     public static String extractFileName(String dirtyFileName) {
-        String regexPattern = "^(\\d*)[_](\\w*.[a-z|A-Z]*)";
+        String regexPattern = "^(\\d*)[_](\\w*.[^ \\f\\n\\r\\t\\v.]*)";
         List<String> result = new ArrayList<String>();
         Pattern registrarPattern = Pattern.compile(regexPattern);
         Matcher matcher = registrarPattern.matcher(dirtyFileName);
