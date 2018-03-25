@@ -6,6 +6,11 @@ import static org.junit.Assert.assertEquals;
 
 public class CreditcardValidationTest {
     @Test
+    public void test26() {
+        assertEquals(true, Validate.validate("26"));
+    }
+
+    @Test
     public void test2121() {
         assertEquals(true, Validate.validate("2121"));
     }
