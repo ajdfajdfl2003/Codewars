@@ -10,6 +10,11 @@ public class ScrambliesTest {
     }
 
     @Test
+    public void testCase_aabbcamaomsccdd() {
+        testing(Scramblies.scramble("aabbcamaomsccdd", "commas"), true);
+    }
+
+    @Test
     public void testCase_javscripts() {
         testing(Scramblies.scramble("javscripts", "javascript"), false);
     }
