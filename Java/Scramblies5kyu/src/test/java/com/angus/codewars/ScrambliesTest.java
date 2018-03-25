@@ -10,6 +10,11 @@ public class ScrambliesTest {
     }
 
     @Test
+    public void testCase_sammoc() {
+        testing(Scramblies.scramble("sammoc", "commas"), true);
+    }
+
+    @Test
     public void testCase_commas() {
         testing(Scramblies.scramble("commas", "commas"), true);
     }
