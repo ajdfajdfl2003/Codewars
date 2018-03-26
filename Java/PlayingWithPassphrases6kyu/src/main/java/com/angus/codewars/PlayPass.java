@@ -5,23 +5,20 @@ public class PlayPass {
         char[] strToChars = s.toCharArray();
 
         for (int i = 0; i < strToChars.length; i++) {
-            System.out.print(strToChars[i]);
             if (Character.isAlphabetic(strToChars[i])) {
-                strToChars[i] = Character.toLowerCase(strToChars[i]);
-                strToChars[i] = (char) (((strToChars[i] - 'a' + n) % 26) + 'a');
-                System.out.print(strToChars[i]);
+                char toBeReplaced = Character.toLowerCase(strToChars[i]);
+                toBeReplaced = (char) (((toBeReplaced - 'a' + n) % 26) + 'a');
                 if (i % 2 == 0) {
-                    strToChars[i] = Character.toUpperCase(strToChars[i]);
+                    toBeReplaced = Character.toUpperCase(toBeReplaced);
                 } else {
-                    strToChars[i] = Character.toLowerCase(strToChars[i]);
+                    toBeReplaced = Character.toLowerCase(toBeReplaced);
                 }
+                strToChars[i] = toBeReplaced;
             } else if (Character.isDigit(strToChars[i])) {
                 strToChars[i] = (char) ('9' - Character.getNumericValue(strToChars[i]));
             }
-            System.out.println();
         }
-        StringBuilder result = new StringBuilder(new String(strToChars)).reverse();
 
-        return result.toString();
+        return new StringBuilder(new String(strToChars)).reverse().toString();
     }
 }
