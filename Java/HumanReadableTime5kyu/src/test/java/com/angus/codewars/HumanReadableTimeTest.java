@@ -6,6 +6,11 @@ import static org.junit.Assert.assertEquals;
 
 public class HumanReadableTimeTest {
     @Test
+    public void testCase05() {
+        assertEquals("makeReadable(359999)", "99:59:59", HumanReadableTime.makeReadable(359999));
+    }
+
+    @Test
     public void testCase04() {
         assertEquals("makeReadable(86399)", "23:59:59", HumanReadableTime.makeReadable(86399));
     }
