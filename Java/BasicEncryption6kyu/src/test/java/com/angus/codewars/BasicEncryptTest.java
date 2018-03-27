@@ -14,6 +14,12 @@ public class BasicEncryptTest {
     }
 
     @Test
+    public void testDecrypt03() {
+        assertEquals("text = 'please encrypt me', rule = 2", "rngcug\"gpet{rv\"og",
+                enc.encrypt("please encrypt me", 2));
+    }
+
+    @Test
     public void testDecrypt02() {
         assertEquals("text = 'a', rule = 1", "b",
                 enc.encrypt("a", 1));

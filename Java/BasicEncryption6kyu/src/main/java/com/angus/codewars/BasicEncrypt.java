@@ -9,7 +9,7 @@ public class BasicEncrypt {
 
         char[] strToChars = text.toCharArray();
         for (int i = 0; i < strToChars.length; i++) {
-            strToChars[i]++;
+            strToChars[i] += rule;
         }
 
         return new String(strToChars);
