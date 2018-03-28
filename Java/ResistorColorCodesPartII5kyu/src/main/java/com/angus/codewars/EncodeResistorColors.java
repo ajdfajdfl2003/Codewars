@@ -7,11 +7,7 @@ public class EncodeResistorColors {
         String[] splitOhmsStr = ohmsString.split(" ");
         String ohmsValue = splitOhmsStr[0];
 
-        if (ohmsValue.contains("k")) {
-            ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("k"))) * 1000));
-        } else if (ohmsValue.contains("M")) {
-            ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("M"))) * 1000000));
-        }
+        ohmsValue = calculateOhms(ohmsValue);
 
         String result = "";
         String[] bands = ohmsValue.split("");
@@ -21,6 +17,15 @@ public class EncodeResistorColors {
 
         int multiplier = ohmsValue.length() - 2;
         return result + getResistorColor().get(String.valueOf(multiplier)) + " gold";
+    }
+
+    private static String calculateOhms(String ohmsValue) {
+        if (ohmsValue.contains("k")) {
+            ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("k"))) * 1000));
+        } else if (ohmsValue.contains("M")) {
+            ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("M"))) * 1000000));
+        }
+        return ohmsValue;
     }
 
     private static HashMap<String, String> getResistorColor() {
