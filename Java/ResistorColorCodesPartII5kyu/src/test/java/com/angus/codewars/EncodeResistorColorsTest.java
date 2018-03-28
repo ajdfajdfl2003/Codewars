@@ -6,6 +6,11 @@ import static org.junit.Assert.assertEquals;
 
 public class EncodeResistorColorsTest {
     @Test
+    public void test_220ohms() {
+        assertEquals("red red brown gold", EncodeResistorColors.encodeResistorColors("220 ohms"));
+    }
+
+    @Test
     public void test_100ohms() {
         assertEquals("brown black brown gold", EncodeResistorColors.encodeResistorColors("100 ohms"));
     }
