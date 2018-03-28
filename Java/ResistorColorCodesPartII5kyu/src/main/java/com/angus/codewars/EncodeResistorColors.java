@@ -4,6 +4,21 @@ import java.util.HashMap;
 
 public class EncodeResistorColors {
     public static String encodeResistorColors(String ohmsString) {
+        String[] splitOhmsStr = ohmsString.split(" ");
+        String ohmsValue = splitOhmsStr[0];
+        if (ohmsValue.contains("k")) {
+            ohmsValue = String.valueOf(Integer.parseInt(ohmsValue.substring(0, ohmsValue.indexOf("k"))) * 1000);
+        }
+        String result = "";
+        String[] bands = ohmsValue.split("");
+        for (int i = 0; i < 2; i++) {
+            result += getResistorColor().get(bands[i]) + " ";
+        }
+        int multiplier = ohmsValue.length() - 2;
+        return result + getResistorColor().get(String.valueOf(multiplier)) + " gold";
+    }
+
+    private static HashMap<String, String> getResistorColor() {
         HashMap<String, String> resistorColor = new HashMap<String, String>();
         resistorColor.put("0", "black");
         resistorColor.put("1", "brown");
@@ -15,14 +30,6 @@ public class EncodeResistorColors {
         resistorColor.put("7", "violet");
         resistorColor.put("8", "gray");
         resistorColor.put("9", "white");
-
-        String[] splitOhmsStr = ohmsString.split(" ");
-        String result = "";
-        String[] bands = splitOhmsStr[0].split("");
-        for (int i = 0; i < 2; i++) {
-            result += resistorColor.get(bands[i]) + " ";
-        }
-        int multiplier = splitOhmsStr[0].length() - 2;
-        return result + resistorColor.get(String.valueOf(multiplier)) + " gold";
+        return resistorColor;
     }
 }
