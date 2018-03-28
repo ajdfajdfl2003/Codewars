@@ -7,7 +7,7 @@ public class EncodeResistorColors {
         String[] splitOhmsStr = ohmsString.split(" ");
         String ohmsValue = splitOhmsStr[0];
         if (ohmsValue.contains("k")) {
-            ohmsValue = String.valueOf(Integer.parseInt(ohmsValue.substring(0, ohmsValue.indexOf("k"))) * 1000);
+            ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("k"))) * 1000));
         }
         String result = "";
         String[] bands = ohmsValue.split("");
