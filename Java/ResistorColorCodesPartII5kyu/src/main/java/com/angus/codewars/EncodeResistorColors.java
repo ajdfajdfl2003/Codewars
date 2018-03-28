@@ -6,14 +6,19 @@ public class EncodeResistorColors {
     public static String encodeResistorColors(String ohmsString) {
         String[] splitOhmsStr = ohmsString.split(" ");
         String ohmsValue = splitOhmsStr[0];
+
         if (ohmsValue.contains("k")) {
             ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("k"))) * 1000));
+        } else if (ohmsValue.contains("M")) {
+            ohmsValue = String.valueOf((int) (Double.parseDouble(ohmsValue.substring(0, ohmsValue.indexOf("M"))) * 1000000));
         }
+
         String result = "";
         String[] bands = ohmsValue.split("");
         for (int i = 0; i < 2; i++) {
             result += getResistorColor().get(bands[i]) + " ";
         }
+
         int multiplier = ohmsValue.length() - 2;
         return result + getResistorColor().get(String.valueOf(multiplier)) + " gold";
     }
