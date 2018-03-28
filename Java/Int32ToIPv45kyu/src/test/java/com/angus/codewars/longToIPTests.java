@@ -11,7 +11,7 @@ public class longToIPTests {
     }
 
     @Test
-    public void sampleTest_2154959208L() {
+    public void sampleTest_2149583361L() {
         assertEquals("128.32.10.1", Kata.longToIP(2149583361L));
     }
 }
