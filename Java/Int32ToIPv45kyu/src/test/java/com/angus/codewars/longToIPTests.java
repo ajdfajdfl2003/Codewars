@@ -6,6 +6,11 @@ import static org.junit.Assert.assertEquals;
 
 public class longToIPTests {
     @Test
+    public void sampleTest_2154959208L() {
+        assertEquals("128.114.17.104", Kata.longToIP(2154959208L));
+    }
+
+    @Test
     public void sampleTest_0() {
         assertEquals("0.0.0.0", Kata.longToIP(0));
     }
