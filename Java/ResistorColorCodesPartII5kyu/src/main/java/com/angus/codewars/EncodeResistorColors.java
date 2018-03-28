@@ -17,9 +17,16 @@ public class EncodeResistorColors {
         resistorColor.put("9", "white");
         String[] splitOhmsStr = ohmsString.split(" ");
         String result = "";
-        for (String band : splitOhmsStr[0].split("")) {
-            result += resistorColor.get(band) + " ";
+        String[] bands = splitOhmsStr[0].split("");
+        for (int i = 0; i < 2; i++) {
+            result += resistorColor.get(bands[i]) + " ";
         }
-        return result + "black gold";
+        if (bands.length > 2) {
+            result += "brown ";
+        } else {
+            result += "black ";
+        }
+
+        return result + "gold";
     }
 }
