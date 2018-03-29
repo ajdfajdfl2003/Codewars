@@ -1,12 +1,11 @@
-package com.angus;
+package com.angus.codewars;
 
-import java.util.Arrays;
 import java.util.PrimitiveIterator;
 import java.util.stream.IntStream;
 
-public class Kata {
-    public static Kata newInstance() {
-        return new Kata();
+public class SortTheOdd {
+    public static SortTheOdd newInstance() {
+        return new SortTheOdd();
     }
 
     public int[] sortArray(int[] array) {
