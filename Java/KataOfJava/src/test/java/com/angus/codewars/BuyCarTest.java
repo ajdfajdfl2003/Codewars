@@ -6,6 +6,12 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class BuyCarTest {
     @Test
+    public void test4() {
+        int[] r = new int[]{1, 0};
+        assertArrayEquals(r, BuyCar.nbMonths(7000, 8000, 985, 1.5));
+    }
+
+    @Test
     public void test3() {
         int[] r = new int[]{1, 15};
         assertArrayEquals(r, BuyCar.nbMonths(7000, 8000, 1000, 1.5));
