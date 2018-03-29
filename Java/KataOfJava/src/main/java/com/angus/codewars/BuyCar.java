@@ -6,21 +6,23 @@ public class BuyCar {
 
     public static int[] nbMonths(int startPriceOld, int startPriceNew, int savingperMonth, double percentLossByMonth) {
         int month = 0;
-        int resetOfMoney;
-        int totalAmount = 0;
+        double resetOfMoney;
+        double totalAmount = 0;
+        double oldCarPrice = startPriceOld;
+        double newCarPrice = startPriceNew;
 
         double ratio = 1 - (percentLossByMonth / 100);
-        while (startPriceOld + totalAmount < startPriceNew) {
+        while (oldCarPrice + totalAmount < newCarPrice) {
             month++;
             totalAmount += savingperMonth;
 
             double lossTwiceMonth = month % 2 == 0 ? TWICE_MONTH_LOSS_RATIO : 0;
             ratio -= lossTwiceMonth;
-            startPriceOld *= ratio;
-            startPriceNew *= ratio;
+            oldCarPrice *= ratio;
+            newCarPrice *= ratio;
         }
 
-        resetOfMoney = startPriceOld + totalAmount - startPriceNew;
-        return new int[]{month, resetOfMoney};
+        resetOfMoney = oldCarPrice - newCarPrice + totalAmount;
+        return new int[]{month, (int) Math.round(resetOfMoney)};
     }
 }
