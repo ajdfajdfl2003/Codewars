@@ -1,6 +1,6 @@
 package com.angus.codewars;
 
-public class Kata {
+public class LongToIP {
 
     private static final int BIT_MAX = 31;
 
