@@ -6,11 +6,11 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class ShortestWordTest {
-    private Kata target;
+    private ShortestWord target;
 
     @Before
     public void setUp() {
-        this.target = new Kata();
+        this.target = new ShortestWord();
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ShortestWordTest {
 
     @Test
     public void GivenTestCase_Two_Should_Return3() {
-        Kata target = new Kata();
+        ShortestWord target = new ShortestWord();
 
         String givenWord = "turns out random test cases are easier than writing out basic ones";
         int actual = target.findShort(givenWord);
