@@ -3,7 +3,7 @@ package com.angus.codewars;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Validate {
+public class CreditcardValidation {
     public static boolean validate(String n) {
         int[] checkValid = Stream.of(n.split("")).mapToInt(v -> Integer.parseInt(v)).toArray();
         int needToCheked = checkValid.length % 2;
