@@ -7,6 +7,3 @@ matrix:
         - develop
       before_install:
         - cd C#
-      install:
-        - sudo apt-get install -y gtk-sharp2
-        - nuget restore Codewars.sln
