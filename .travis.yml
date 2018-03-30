@@ -1,7 +1,7 @@
 matrix:
   include:
     - language: csharp
-      solution: solution-name.sln
+      solution: Codewars.sln
       branches:
         only:
         - develop
