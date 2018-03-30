@@ -9,4 +9,4 @@ matrix:
         - cd C#
       install:
         - sudo apt-get install -y gtk-sharp2
-        - nuget restore $TRAVIS_SOLUTION
+        - nuget restore Codewars.sln
