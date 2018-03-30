@@ -1,0 +1,12 @@
+matrix:
+  include:
+    - language: csharp
+      solution: solution-name.sln
+      branches:
+        only:
+        - develop
+      before_install:
+        - cd C#
+      install:
+        - sudo apt-get install -y gtk-sharp2
+        - nuget restore solution-name.sln
