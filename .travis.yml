@@ -3,6 +3,6 @@ matrix:
     - language: java
       branches:
         only:
-        - develop
+        - master
       before_install:
         - cd Java/KataOfJava
