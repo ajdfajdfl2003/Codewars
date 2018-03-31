@@ -1,0 +1,8 @@
+matrix:
+  include:
+    - language: java
+      branches:
+        only:
+        - develop
+      before_install:
+        - cd Java/KataOfJava
