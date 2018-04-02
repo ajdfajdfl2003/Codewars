@@ -7,7 +7,7 @@ import java.util.Stack;
 public class DirReduction {
     private static Map<String, String> opposite = new HashMap<>();
 
-    public DirReduction() {
+    static {
         opposite.put("north", "south");
         opposite.put("south", "north");
         opposite.put("east", "west");
