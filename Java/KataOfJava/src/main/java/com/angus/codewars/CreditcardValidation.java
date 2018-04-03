@@ -3,9 +3,15 @@ package com.angus.codewars;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/*
+ 題目：https://www.codewars.com/kata/validate-credit-card-number/
+ */
 public class CreditcardValidation {
     public static boolean validate(String n) {
-        int[] checkValid = Stream.of(n.split("")).mapToInt(v -> Integer.parseInt(v)).toArray();
+        // 用 stream 把每個 String 轉換成 Integer
+        // 然後存成 int array
+        int[] checkValid = Stream.of(n.split("")).mapToInt(Integer::parseInt).toArray();
+
         int needToCheked = checkValid.length % 2;
         for (int i = 0; i < checkValid.length; i++) {
             if (i % 2 == needToCheked) {
