@@ -2,7 +2,11 @@ package com.angus.codewars;
 
 import java.util.Arrays;
 
-public class Max {
+/*
+ 題目：https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c
+ 參考演算法：http://www.csie.ntnu.edu.tw/~u91029/MaximumSubarray.html#4
+ */
+public class MaxSubArraySum {
     public static int sequence(int[] arr) {
         if (Arrays.asList(arr).isEmpty()) {
             return 0;
