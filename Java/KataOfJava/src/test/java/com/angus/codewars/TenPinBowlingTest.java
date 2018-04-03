@@ -6,6 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 public class TenPinBowlingTest {
     @Test
+    public void Sample03() {
+        assertEquals(111,
+                TenPinBowling.bowling_score("X 4/ 7/ 04 8/ 71 61 5/ 35 34"));
+    }
+
+    @Test
     public void Sample02() {
         assertEquals(115,
                 TenPinBowling.bowling_score("00 5/ 4/ 53 33 22 4/ 5/ 45 XXX"));

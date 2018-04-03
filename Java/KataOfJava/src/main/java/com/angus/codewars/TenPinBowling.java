@@ -18,7 +18,7 @@ public class TenPinBowling {
             } else {
                 lastScore += Integer.parseInt(eachFrame[index]);
                 if (index % 2 == 1
-                        && index + 1 < eachFrame.length
+                        && index + 1 < eachFrame.length - 1
                         && !eachFrame[index + 1].equals("/")) {
                     gameRole++;
                 }
