@@ -3,6 +3,11 @@ package com.angus.codewars;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+/*
+可以用這個來做驗證：http://www.bowlinggenius.com/
+清楚的計分方式：http://www.shute.kh.edu.tw/~92d314/email/A22.htm
+*/
+
 public class TenPinBowling {
     public static int bowling_score(String frames) {
         int lastScore = 0;
