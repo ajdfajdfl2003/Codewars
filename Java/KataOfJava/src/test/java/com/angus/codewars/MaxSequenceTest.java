@@ -1,3 +1,5 @@
+package com.angus.codewars;
+
 import com.angus.codewars.Max;
 import org.junit.Test;
 
