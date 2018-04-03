@@ -6,14 +6,14 @@ public class TenPinBowling {
         String[] eachFrame = frames.replace(" ", "").split("(?<!^)");
 
         do {
-            if (eachFrame[gameRoll].equalsIgnoreCase("x")) {
+            if (eachFrame[index].equalsIgnoreCase("x")) {
                 lastScore += 10
-                        + checkScore(eachFrame[gameRoll + 1])
-                        + checkScore(eachFrame[gameRoll + 2]);
+                        + checkScore(eachFrame[index + 1], eachFrame[index])
+                        + checkScore(eachFrame[index + 2], eachFrame[index + 1]);
                 gameRoll++;
             } else if (eachFrame[index].equals("/")) {
                 lastScore += (10 - Integer.parseInt(eachFrame[index - 1]))
-                        + checkScore(eachFrame[index + 1]);
+                        + checkScore(eachFrame[index + 1], "");
                 if (index % 2 == 1) {
                     gameRoll++;
                 }
@@ -29,9 +29,11 @@ public class TenPinBowling {
         return lastScore;
     }
 
-    private static int checkScore(String score) {
+    private static int checkScore(String score, String previousScore) {
         if (score.equalsIgnoreCase("x")) {
             return 10;
+        } else if (score.equals("/")) {
+            return 10 - Integer.parseInt(previousScore);
         }
         return Integer.parseInt(score);
     }
