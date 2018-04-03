@@ -2,7 +2,7 @@ package com.angus.codewars;
 
 public class TenPinBowling {
     public static int bowling_score(String frames) {
-        int lastScore = 0, gameRoll = 0, index = 0;
+        int lastScore = 0, index = 0, gameRole = 0;
         String[] eachFrame = frames.replace(" ", "").split("(?<!^)");
 
         do {
@@ -10,21 +10,16 @@ public class TenPinBowling {
                 lastScore += 10
                         + checkScore(eachFrame[index + 1], eachFrame[index])
                         + checkScore(eachFrame[index + 2], eachFrame[index + 1]);
-                gameRoll++;
+                gameRole++;
             } else if (eachFrame[index].equals("/")) {
                 lastScore += (10 - Integer.parseInt(eachFrame[index - 1]))
                         + checkScore(eachFrame[index + 1], "");
-                if (index % 2 == 1) {
-                    gameRoll++;
-                }
+                gameRole++;
             } else {
                 lastScore += Integer.parseInt(eachFrame[index]);
-                if (index % 2 == 1) {
-                    gameRoll++;
-                }
             }
             index++;
-        } while (gameRoll < 10);
+        } while (gameRole < 10 && index < eachFrame.length);
 
         return lastScore;
     }
