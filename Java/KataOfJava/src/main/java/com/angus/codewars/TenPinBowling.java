@@ -11,8 +11,14 @@ public class TenPinBowling {
                         + checkScore(eachFrame[gameRoll + 1])
                         + checkScore(eachFrame[gameRoll + 2]);
                 gameRoll++;
+            } else if (eachFrame[index].equals("/")) {
+                lastScore += (10 - Integer.parseInt(eachFrame[index - 1]))
+                        + checkScore(eachFrame[index + 1]);
+                if (index % 2 == 1) {
+                    gameRoll++;
+                }
             } else {
-                lastScore += Integer.parseInt(eachFrame[gameRoll]);
+                lastScore += Integer.parseInt(eachFrame[index]);
                 if (index % 2 == 1) {
                     gameRoll++;
                 }
@@ -27,6 +33,6 @@ public class TenPinBowling {
         if (score.equalsIgnoreCase("x")) {
             return 10;
         }
-        return 0;
+        return Integer.parseInt(score);
     }
 }
