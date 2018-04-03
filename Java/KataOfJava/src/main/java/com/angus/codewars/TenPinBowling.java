@@ -1,40 +1,34 @@
 package com.angus.codewars;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class TenPinBowling {
     public static int bowling_score(String frames) {
-        int lastScore = 0, index = 0, gameRole = 0;
-        String[] eachFrame = frames.replace(" ", "").split("(?<!^)");
+        int lastScore = 0;
+        String[] fArr = frames.split(" ");
 
-        do {
-            if (eachFrame[index].equalsIgnoreCase("x")) {
-                lastScore += 10
-                        + checkScore(eachFrame[index + 1], eachFrame[index])
-                        + checkScore(eachFrame[index + 2], eachFrame[index + 1]);
-                gameRole++;
-            } else if (eachFrame[index].equals("/")) {
-                lastScore += (10 - Integer.parseInt(eachFrame[index - 1]))
-                        + checkScore(eachFrame[index + 1], "");
-                gameRole++;
-            } else {
-                lastScore += Integer.parseInt(eachFrame[index]);
-                if (index % 2 == 1
-                        && index + 1 < eachFrame.length - 1
-                        && !eachFrame[index + 1].equals("/")) {
-                    gameRole++;
-                }
+        for (int i = 0; i < fArr.length; i++) {
+            /*
+            如果純數字，就不會進來
+            如果符合 “Ｘ” 或是 0~9/ 那就進來取三位來算數
+            */
+            if (fArr[i].matches("X|[0-9]/")) {
+                if (i < 9) fArr[i] = Arrays.stream(fArr, i, fArr.length)
+                        .collect(Collectors.joining(""))
+                        .substring(0, 3);
             }
-            index++;
-        } while (gameRole < 10 && index < eachFrame.length);
+
+            /*
+            如果純數字，純計算
+            如果符合 “0~9/” 取代成 X，在 map 的時候用 10 下去計算
+            */
+            lastScore += fArr[i].replaceAll("[0-9]/", "X")
+                    .chars()
+                    .map(n -> !Character.isDigit((char) n) ? 10 : Integer.valueOf(Character.toString((char) n)))
+                    .sum();
+        }
 
         return lastScore;
-    }
-
-    private static int checkScore(String score, String previousScore) {
-        if (score.equalsIgnoreCase("x")) {
-            return 10;
-        } else if (score.equals("/")) {
-            return 10 - Integer.parseInt(previousScore);
-        }
-        return Integer.parseInt(score);
     }
 }
