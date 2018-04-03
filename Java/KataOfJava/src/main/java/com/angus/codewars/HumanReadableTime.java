@@ -1,5 +1,8 @@
 package com.angus.codewars;
 
+/*
+ 題目：https://www.codewars.com/kata/human-readable-time/
+ */
 public class HumanReadableTime {
     private static String formatStr = "%02d";
 

@@ -1,5 +1,9 @@
 package com.angus.codewars;
 
+/*
+  題目：https://www.codewars.com/kata/buying-a-car/
+  這題因為看不懂題目，有去參考 91 哥：https://dotblogs.com.tw/hatelove/2017/03/15/codewars-buying-a-car-by-tdd
+ */
 public class BuyCar {
 
     public static final double TWICE_MONTH_LOSS_RATIO = 0.005;

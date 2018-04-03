@@ -1,6 +1,9 @@
 package com.angus.codewars;
 
-public class PlayPass {
+/*
+ 題目：https://www.codewars.com/kata/559536379512a64472000053
+ */
+public class PlayingWithPassPhrases {
     public static String playPass(String s, int n) {
         char[] strToChars = s.toCharArray();
 
