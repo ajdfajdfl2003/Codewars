@@ -42,7 +42,9 @@ public class NextSmaller {
         result.add(0, sortedPartialDigits.get(0));
 
         if (compareWithOrigin(n, Long.parseLong(String.join("", result)))) {
-            return Long.parseLong(String.join("", result));
+            if (!result.get(0).equals("0")) {
+                return Long.parseLong(String.join("", result));
+            }
         }
 
         return -1;
