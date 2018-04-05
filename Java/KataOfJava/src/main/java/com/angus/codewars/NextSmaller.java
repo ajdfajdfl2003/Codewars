@@ -2,62 +2,65 @@ package com.angus.codewars;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
-import java.util.stream.LongStream;
-
-import static java.util.stream.Collectors.toList;
 
 /*
  題目：https://www.codewars.com/kata/next-smaller-number-with-the-same-digits/
+ 參考：https://github.com/Vorgue/Next-smaller-number-with-the-same-digits
  */
 public class NextSmaller {
     public static long nextSmaller(long n) {
-        String allDigits = Long.toString(n);
+        String[] splitDigits = Long.toString(n).split("");
+        int index = 0;
+        boolean flag = false;
 
-        /* Only two digit, just change it */
-        if (allDigits.length() == 2) {
-            String exchanged = allDigits.substring(1, 2) + allDigits.substring(0, 1);
-            if (compareWithOrigin(n, Long.parseLong(exchanged))) {
-                return Long.parseLong(exchanged);
+        /* Find the last one is greater than next one */
+        for (int i = 0; i < splitDigits.length - 1; i++) {
+            if (getLong(splitDigits[i]) > getLong(splitDigits[i + 1])) {
+                index = i;
+                flag = true;
             }
         }
 
-        String firstDigit = allDigits.substring(0, 1);
-        /* Sorted without first digit */
-        List<String> sortedPartialDigits = Arrays.stream(allDigits.substring(1, allDigits.length())
-                .split("")).sorted().collect(toList());
-        sortedPartialDigits.add(0, firstDigit);
+        /* cannot find any element is greater than next one */
+        if (!flag) return -1;
 
-        if (compareWithOrigin(n, Long.parseLong(String.join("", sortedPartialDigits)))) {
-            return Long.parseLong(String.join("", sortedPartialDigits));
-        }
-
-        /* Find most closet and smaller than first digit */
-        List<Long> closetDigit = LongStream.range(0, Long.parseLong(firstDigit))
-                .filter(digit -> sortedPartialDigits.contains(String.valueOf(digit)))
-                .boxed().sorted(Comparator.reverseOrder()).collect(toList());
-        swapDigit(sortedPartialDigits, firstDigit, closetDigit.get(0));
-        List<String> result = sortedPartialDigits.subList(1, sortedPartialDigits.size())
-                .stream().sorted(Comparator.reverseOrder()).collect(toList());
-        result.add(0, sortedPartialDigits.get(0));
-
-        if (compareWithOrigin(n, Long.parseLong(String.join("", result)))) {
-            if (!result.get(0).equals("0")) {
-                return Long.parseLong(String.join("", result));
+        /*
+            Find the first element less than element[index]
+            than swap it and break out
+        */
+        for (int i = splitDigits.length - 1; i > 0; i--) {
+            if (getLong(splitDigits[i]) < getLong(splitDigits[index])) {
+                swapDigit(splitDigits, index, i);
+                break;
             }
         }
 
-        return -1;
+        /* Cannot lead with zero */
+        if (splitDigits[0].equals("0")) {
+            return -1;
+        }
+
+        String allDigits = convertToString(splitDigits);
+
+        /* Sort as descending from element[index+1] */
+        String partialResult = convertToString(Arrays.stream(allDigits.substring(index + 1).split("")).
+                sorted(Comparator.reverseOrder()).toArray(String[]::new));
+
+        return getLong(allDigits.substring(0, index + 1).concat(partialResult));
     }
 
-    private static void swapDigit(List<String> sortedPartialDigits, String element, Long closetDigit) {
-        int elementIndex = sortedPartialDigits.indexOf(element);
-        int closetDigitIndex = sortedPartialDigits.indexOf(String.valueOf(closetDigit));
-        sortedPartialDigits.set(elementIndex, String.valueOf(closetDigit));
-        sortedPartialDigits.set(closetDigitIndex, element);
+    private static String convertToString(String[] splitDigits) {
+        return String.join("", splitDigits);
     }
 
-    private static boolean compareWithOrigin(long n, long comparison) {
-        return comparison < n;
+    private static void swapDigit(String[] splitDigits, int index, int i) {
+        String tmp;
+        tmp = splitDigits[i];
+        splitDigits[i] = splitDigits[index];
+        splitDigits[index] = tmp;
+    }
+
+    private static long getLong(String digit) {
+        return Long.parseLong(digit);
     }
 }
