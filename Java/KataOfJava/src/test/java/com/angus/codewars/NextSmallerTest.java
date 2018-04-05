@@ -6,6 +6,11 @@ import static org.junit.Assert.assertEquals;
 
 public class NextSmallerTest {
     @Test
+    public void testCase441_414() {
+        assertEquals(414, NextSmaller.nextSmaller(441));
+    }
+
+    @Test
     public void testCase_907_790() {
         assertEquals("NextSmaller.nextSmaller(907)"
                 , 790, NextSmaller.nextSmaller(907));
