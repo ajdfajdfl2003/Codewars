@@ -6,63 +6,63 @@ import java.util.Map;
 /*
  題目：https://www.codewars.com/kata/decode-the-morse-code/
  Wiki: https://en.wikipedia.org/wiki/Morse_code
+ 題目有說：他已經有定義好表了，我們可以不用去見那張表格...，題目真的要看清楚...
+
  */
 public class MorseCodeDecoder {
-    private static Map<String, String> decodeMap = new HashMap<>();
+    private static Map<String, String> MorseCode = new HashMap<>();
 
     static {
-        decodeMap.put("...---...", "SOS");
-        decodeMap.put(".-", "A");
-        decodeMap.put("-...", "B");
-        decodeMap.put("-.-.", "C");
-        decodeMap.put("-..", "D");
-        decodeMap.put(".", "E");
-        decodeMap.put("..-.", "F");
-        decodeMap.put("--.", "G");
-        decodeMap.put("....", "H");
-        decodeMap.put("..", "I");
-        decodeMap.put(".---", "J");
-        decodeMap.put("-.-", "K");
-        decodeMap.put(".-..", "L");
-        decodeMap.put("--", "M");
-        decodeMap.put("-.", "N");
-        decodeMap.put("---", "O");
-        decodeMap.put(".--.", "P");
-        decodeMap.put("--.-", "Q");
-        decodeMap.put(".-.", "R");
-        decodeMap.put("...", "S");
-        decodeMap.put("-", "T");
-        decodeMap.put("..-", "U");
-        decodeMap.put("...-", "V");
-        decodeMap.put(".--", "W");
-        decodeMap.put("-..-", "X");
-        decodeMap.put("-.--", "Y");
-        decodeMap.put("--..", "Z");
-        decodeMap.put(".----", "1");
-        decodeMap.put("..---", "2");
-        decodeMap.put("...--", "3");
-        decodeMap.put("....-", "4");
-        decodeMap.put(".....", "5");
-        decodeMap.put("-....", "6");
-        decodeMap.put("--...", "7");
-        decodeMap.put("---..", "8");
-        decodeMap.put("----.", "9");
-        decodeMap.put("-----", "0");
+        MorseCode.put("-.-.--", "!");
+        MorseCode.put(".-.-.-", ".");
+        MorseCode.put("...---...", "SOS");
+        MorseCode.put(".-", "A");
+        MorseCode.put("-...", "B");
+        MorseCode.put("-.-.", "C");
+        MorseCode.put("-..", "D");
+        MorseCode.put(".", "E");
+        MorseCode.put("..-.", "F");
+        MorseCode.put("--.", "G");
+        MorseCode.put("....", "H");
+        MorseCode.put("..", "I");
+        MorseCode.put(".---", "J");
+        MorseCode.put("-.-", "K");
+        MorseCode.put(".-..", "L");
+        MorseCode.put("--", "M");
+        MorseCode.put("-.", "N");
+        MorseCode.put("---", "O");
+        MorseCode.put(".--.", "P");
+        MorseCode.put("--.-", "Q");
+        MorseCode.put(".-.", "R");
+        MorseCode.put("...", "S");
+        MorseCode.put("-", "T");
+        MorseCode.put("..-", "U");
+        MorseCode.put("...-", "V");
+        MorseCode.put(".--", "W");
+        MorseCode.put("-..-", "X");
+        MorseCode.put("-.--", "Y");
+        MorseCode.put("--..", "Z");
+        MorseCode.put(".----", "1");
+        MorseCode.put("..---", "2");
+        MorseCode.put("...--", "3");
+        MorseCode.put("....-", "4");
+        MorseCode.put(".....", "5");
+        MorseCode.put("-....", "6");
+        MorseCode.put("--...", "7");
+        MorseCode.put("---..", "8");
+        MorseCode.put("----.", "9");
+        MorseCode.put("-----", "0");
 
     }
 
     public static String decode(String morseCode) {
-        System.out.println(morseCode);
-        String[] splitOfWords = morseCode.split("   ");
+        String[] splitOfWords = morseCode.trim().split("   ");
 
         StringBuilder result = new StringBuilder();
         for (String word : splitOfWords) {
             String[] splitOfCharacters = word.split(" ");
             for (String character : splitOfCharacters) {
-                String decode = decodeMap.get(character);
-                if (decode != null) {
-                    result.append(decode);
-                }
+                result.append(MorseCode.get(character));
             }
             result.append(" ");
         }
