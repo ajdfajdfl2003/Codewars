@@ -37,6 +37,16 @@ public class MorseCodeDecoder {
         decode.put("-..-", "X");
         decode.put("-.--", "Y");
         decode.put("--..", "Z");
+        decode.put(".----", "1");
+        decode.put("..---", "2");
+        decode.put("...--", "3");
+        decode.put("....-", "4");
+        decode.put(".....", "5");
+        decode.put("-....", "6");
+        decode.put("--...", "7");
+        decode.put("---..", "8");
+        decode.put("----.", "9");
+        decode.put("-----", "0");
 
     }
 

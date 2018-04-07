@@ -6,6 +6,17 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class MorseCodeDecoderITest {
+    @Test
+    public void test67890() {
+        assertThat(MorseCodeDecoder.decode("----- ----. ---.. --... -...."),
+                is("09876"));
+    }
+
+    @Test
+    public void test12345() {
+        assertThat(MorseCodeDecoder.decode(".---- ..--- ...-- ....- ....."),
+                is("12345"));
+    }
 
     @Test
     public void testOPQRSTVWXZ() {
