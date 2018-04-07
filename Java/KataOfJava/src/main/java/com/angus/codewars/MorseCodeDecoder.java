@@ -1,5 +1,6 @@
 package com.angus.codewars;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,10 +45,8 @@ public class MorseCodeDecoder {
 
         StringBuilder result = new StringBuilder();
         for (String word : splitOfWords) {
-            String[] splitOfCharacter = word.split(" ");
-            for (String character : splitOfCharacter) {
-                result.append(decode.get(character));
-            }
+            Arrays.stream(word.split(" "))
+                    .forEach(character -> result.append(decode.get(character)));
             result.append(" ");
         }
         return result.toString().trim();
