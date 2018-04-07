@@ -26,13 +26,13 @@ public class NextBigger {
             }
         }
 
-        String[] partialResult = Arrays.stream(convertToString(splitOfDigits)
-                .substring(index + 1, splitOfDigits.length)
-                .split("")).sorted().toArray(String[]::new);
-        String result = convertToString(splitOfDigits).substring(0, index + 1)
-                + convertToString(partialResult);
+        String result = convertToString(splitOfDigits);
+        String[] partialResult = Arrays.stream(result.substring(index + 1).split(""))
+                .sorted().toArray(String[]::new);
 
-        return getLong(result);
+        return getLong(result
+                .substring(0, index + 1)
+                .concat(convertToString(partialResult)));
     }
 
     private static String convertToString(String[] splitOfDigits) {
