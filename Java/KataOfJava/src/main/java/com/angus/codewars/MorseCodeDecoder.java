@@ -1,13 +1,14 @@
 package com.angus.codewars;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /*
  題目：https://www.codewars.com/kata/decode-the-morse-code/
  Wiki: https://en.wikipedia.org/wiki/Morse_code
  題目有說：他已經有定義好表了，我們可以不用去見那張表格...，題目真的要看清楚...
-
  */
 public class MorseCodeDecoder {
     private static Map<String, String> MorseCode = new HashMap<>();
@@ -58,14 +59,19 @@ public class MorseCodeDecoder {
     public static String decode(String morseCode) {
         String[] splitOfWords = morseCode.trim().split("   ");
 
-        StringBuilder result = new StringBuilder();
-        for (String word : splitOfWords) {
-            String[] splitOfCharacters = word.split(" ");
-            for (String character : splitOfCharacters) {
-                result.append(MorseCode.get(character));
-            }
-            result.append(" ");
-        }
-        return result.toString().trim();
+        /*
+          Use stream, map each word then pass word to decodeWord method,
+          than join each word with space
+         */
+        String result = Arrays.stream(splitOfWords)
+                .map(MorseCodeDecoder::decodeWord)
+                .collect(Collectors.joining(" "));
+
+        return result;
+    }
+
+    private static String decodeWord(String word) {
+        /* split each character with space, than map to MorseCode and join together */
+        return Arrays.stream(word.split(" ")).map(MorseCode::get).collect(Collectors.joining());
     }
 }
