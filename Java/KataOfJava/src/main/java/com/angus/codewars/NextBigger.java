@@ -17,7 +17,7 @@ public class NextBigger {
 
         if (!flag) return -1;
 
-        for (int i = index + 1; i < splitOfDigits.length; i++) {
+        for (int i = splitOfDigits.length - 1; i > index; i--) {
             if (getLong(splitOfDigits[i]) > getLong(splitOfDigits[index])) {
                 String tmp = splitOfDigits[i];
                 splitOfDigits[i] = splitOfDigits[index];
