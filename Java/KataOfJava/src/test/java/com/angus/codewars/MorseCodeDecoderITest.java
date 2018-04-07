@@ -7,6 +7,12 @@ import static org.junit.Assert.assertThat;
 
 public class MorseCodeDecoderITest {
     @Test
+    public void testNull_E() {
+        assertThat(MorseCodeDecoder.decode(" ."),
+                is("E"));
+    }
+
+    @Test
     public void test67890() {
         assertThat(MorseCodeDecoder.decode("----- ----. ---.. --... -...."),
                 is("09876"));
