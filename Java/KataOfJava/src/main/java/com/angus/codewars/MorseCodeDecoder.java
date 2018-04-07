@@ -5,11 +5,13 @@ import java.util.Map;
 
 /*
  題目：https://www.codewars.com/kata/decode-the-morse-code/
+ Wiki: https://en.wikipedia.org/wiki/Morse_code
  */
 public class MorseCodeDecoder {
     private static Map<String, String> decodeMap = new HashMap<>();
 
     static {
+        decodeMap.put("...---...", "SOS");
         decodeMap.put(".-", "A");
         decodeMap.put("-...", "B");
         decodeMap.put("-.-.", "C");
