@@ -10,12 +10,15 @@ public class MorseCodeDecoder {
     private static Map<String, String> decode = new HashMap<>();
 
     static {
-        decode.put("....", "H");
+        decode.put(".-", "A");
+        decode.put("-...", "B");
+        decode.put("-.-.", "C");
+        decode.put("-..", "D");
         decode.put(".", "E");
+        decode.put("....", "H");
         decode.put("-.--", "Y");
         decode.put(".---", "J");
         decode.put("..-", "U");
-        decode.put("-..", "D");
     }
 
     public static String decode(String morseCode) {
