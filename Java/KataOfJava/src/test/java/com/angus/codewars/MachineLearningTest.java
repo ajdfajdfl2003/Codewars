@@ -1,6 +1,5 @@
 package com.angus.codewars;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -41,7 +40,7 @@ public class MachineLearningTest {
         assertEquals(machineLearning.command(0, rnd.nextInt(101)), 0);
     }
 
-    @Ignore
+    @Test
     public void testCorrectFunctionsForAllCommands() {
         MachineLearning machineLearning = new MachineLearning();
         final Random rnd = new Random();
