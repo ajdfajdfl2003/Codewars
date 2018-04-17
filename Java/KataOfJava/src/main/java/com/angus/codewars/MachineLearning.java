@@ -15,7 +15,7 @@ public class MachineLearning {
     public int command(int cmd, int num) {
         int result = 0;
         if (cmd == 0) {
-            return 0;
+            return Actions.FUNCTIONS.get(1).apply(num);
         }
         return result;
     }
