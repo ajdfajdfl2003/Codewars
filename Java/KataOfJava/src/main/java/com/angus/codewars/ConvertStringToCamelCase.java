@@ -10,7 +10,8 @@ import static java.util.stream.Collectors.joining;
 public class ConvertStringToCamelCase {
 
     public static String toCamelCase(String s) {
-        return Arrays.stream(s.split("_"))
+        String[] afterReplacement = s.split("_");
+        return afterReplacement[0] + Arrays.stream(afterReplacement).skip(1)
                 .map(str -> str.substring(0, 1).toUpperCase().concat(str.substring(1, str.length())))
                 .collect(joining(""));
     }
