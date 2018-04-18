@@ -16,17 +16,17 @@ public class TimeFormatter {
         StringBuilder result = new StringBuilder();
 
         if (hours > 0) {
-            String formatMinutes = buildUnitOfTimes(0, hours, "hour");
+            String formatMinutes = buildUnitOfTimes(0, hours, "hour", "");
             result.append(formatMinutes);
         }
 
-        if (minutes != 0) {
-            String formatMinutes = buildUnitOfTimes(hours, minutes, "minute");
+        if (minutes > 0) {
+            String formatMinutes = buildUnitOfTimes(hours, minutes, "minute", "");
             result.append(formatMinutes);
         }
 
-        if (seconds != 0) {
-            String formatSeconds = buildUnitOfTimes(minutes, seconds, "second");
+        if (seconds > 0) {
+            String formatSeconds = buildUnitOfTimes(minutes, seconds, "second", "and");
             result.append(formatSeconds);
         }
 
@@ -34,8 +34,9 @@ public class TimeFormatter {
 
     }
 
-    private static String buildUnitOfTimes(int largerUnitTime, int currentUnitTime, String unit) {
-        return (largerUnitTime > 0 ? " and " : "") +
-                currentUnitTime + " " + (currentUnitTime > 1 ? unit.concat("s") : unit);
+    private static String buildUnitOfTimes(int largerUnitTime, int currentUnitTime, String unit, String separateBy) {
+        String space = " ";
+        return (largerUnitTime > 0 ? space.concat(separateBy).concat(space) : "") +
+                currentUnitTime + space + (currentUnitTime > 1 ? unit.concat("s") : unit);
     }
 }
