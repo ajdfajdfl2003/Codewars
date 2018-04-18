@@ -7,21 +7,27 @@ public class TimeFormatter {
             return "now";
         }
 
-        int transToHours = seconds / 3600;
-        int transToMinutes = (seconds - transToHours * 3600) / 60;
-        int transToSeconds = seconds - transToHours * 3600 - transToMinutes * 60;
+        int transToDays = seconds / 86400;
+        int transToHours = (seconds - transToDays * 86400) / 3600;
+        int transToMinutes = (seconds - transToDays * 86400 - transToHours * 3600) / 60;
+        int transToSeconds = seconds - transToDays * 86400 - transToHours * 3600 - transToMinutes * 60;
 
-        return buildDurationFormat(transToHours, transToMinutes, transToSeconds);
+        return buildDurationFormat(transToDays, transToHours, transToMinutes, transToSeconds);
 
     }
 
-    private static String buildDurationFormat(int hours, int minutes, int seconds) {
+    private static String buildDurationFormat(int days, int hours, int minutes, int seconds) {
 
         StringBuilder result = new StringBuilder();
 
+        if (days > 0) {
+            String formatDays = buildUnitOfTimes(0, days, "day", "");
+            result.append(formatDays);
+        }
+
         if (hours > 0) {
-            String formatMinutes = buildUnitOfTimes(0, hours, "hour", "");
-            result.append(formatMinutes);
+            String formatHours = buildUnitOfTimes(0, hours, "hour", "");
+            result.append(formatHours);
         }
 
         if (minutes > 0) {

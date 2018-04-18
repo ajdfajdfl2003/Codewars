@@ -34,4 +34,9 @@ public class HumanReadableDurationFormatTest {
     public void testFormatDuration_now() {
         assertEquals("now", TimeFormatter.formatDuration(0));
     }
+
+    @Test
+    public void testFormatDuration_1day() {
+        assertEquals("1 day", TimeFormatter.formatDuration(86400));
+    }
 }
