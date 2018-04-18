@@ -21,23 +21,19 @@ public class TimeFormatter {
         StringBuilder result = new StringBuilder();
 
         if (days > 0) {
-            String formatDays = buildUnitOfTimes(0, days, "day", "");
-            result.append(formatDays);
+            result.append(buildUnitOfTimes(0, days, "day", ""));
         }
 
         if (hours > 0) {
-            String formatHours = buildUnitOfTimes(0, hours, "hour", "");
-            result.append(formatHours);
+            result.append(buildUnitOfTimes(0, hours, "hour", ""));
         }
 
         if (minutes > 0) {
-            String formatMinutes = buildUnitOfTimes(hours, minutes, "minute", ", ");
-            result.append(formatMinutes);
+            result.append(buildUnitOfTimes(hours, minutes, "minute", ", "));
         }
 
         if (seconds > 0) {
-            String formatSeconds = buildUnitOfTimes(minutes, seconds, "second", " and ");
-            result.append(formatSeconds);
+            result.append(buildUnitOfTimes(minutes, seconds, "second", " and "));
         }
 
         return result.toString();
