@@ -17,4 +17,10 @@ public class ConvertStringToCamelCaseTest {
         System.out.println("input: " + input);
         assertEquals("theStealthWarrior", ConvertStringToCamelCase.toCamelCase(input));
     }
+
+    @Test
+    public void testSomeDashLowerStart() {
+        String input = "the-Stealth-Warrior";
+        assertEquals("theStealthWarrior", ConvertStringToCamelCase.toCamelCase(input));
+    }
 }
