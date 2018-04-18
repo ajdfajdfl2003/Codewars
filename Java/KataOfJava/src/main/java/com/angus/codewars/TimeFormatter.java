@@ -3,6 +3,10 @@ package com.angus.codewars;
 public class TimeFormatter {
     public static String formatDuration(int seconds) {
 
+        if (seconds == 0) {
+            return "now";
+        }
+
         int transToHours = seconds / 3600;
         int transToMinutes = (seconds - transToHours * 3600) / 60;
         int transToSeconds = seconds - transToHours * 3600 - transToMinutes * 60;

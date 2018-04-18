@@ -29,4 +29,9 @@ public class HumanReadableDurationFormatTest {
     public void testFormatDuration_1hour_1minute_2seconds() {
         assertEquals("1 hour, 1 minute and 2 seconds", TimeFormatter.formatDuration(3662));
     }
+
+    @Test
+    public void testFormatDuration_now() {
+        assertEquals("now", TimeFormatter.formatDuration(0));
+    }
 }
