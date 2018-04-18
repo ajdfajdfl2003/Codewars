@@ -3,24 +3,30 @@ package com.angus.codewars;
 public class TimeFormatter {
     public static String formatDuration(int seconds) {
 
-        int transToMinutes = seconds / 60;
-        int transToSeconds = seconds - transToMinutes * 60;
+        int transToHours = seconds / 3600;
+        int transToMinutes = (seconds - transToHours * 3600) / 60;
+        int transToSeconds = seconds - transToHours * 3600 - transToMinutes * 60;
 
-        return buildDurationFormat(transToMinutes, transToSeconds);
+        return buildDurationFormat(transToHours, transToMinutes, transToSeconds);
 
     }
 
-    private static String buildDurationFormat(int transToMinutes, int transToSeconds) {
+    private static String buildDurationFormat(int hours, int minutes, int seconds) {
 
         StringBuilder result = new StringBuilder();
 
-        if (transToMinutes != 0) {
-            String formatMinutes = buildUnitOfTimes(0, transToMinutes, "minute");
+        if (hours > 0) {
+            String formatMinutes = buildUnitOfTimes(0, hours, "hour");
             result.append(formatMinutes);
         }
 
-        if (transToSeconds != 0) {
-            String formatSeconds = buildUnitOfTimes(transToMinutes, transToSeconds, "second");
+        if (minutes != 0) {
+            String formatMinutes = buildUnitOfTimes(hours, minutes, "minute");
+            result.append(formatMinutes);
+        }
+
+        if (seconds != 0) {
+            String formatSeconds = buildUnitOfTimes(minutes, seconds, "second");
             result.append(formatSeconds);
         }
 
