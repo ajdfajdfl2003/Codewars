@@ -1,5 +1,8 @@
 package com.angus.codewars;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TimeFormatter {
     public static String formatDuration(int seconds) {
 
@@ -18,31 +21,47 @@ public class TimeFormatter {
 
     private static String buildDurationFormat(int days, int hours, int minutes, int seconds) {
 
-        StringBuilder result = new StringBuilder();
+        List<String> result = new ArrayList<>();
 
         if (days > 0) {
-            result.append(buildUnitOfTimes(0, days, "day", ""));
+            result.add(buildUnitOfTimes(days, "day"));
         }
 
         if (hours > 0) {
-            result.append(buildUnitOfTimes(0, hours, "hour", ""));
+            result.add(buildUnitOfTimes(hours, "hour"));
         }
 
         if (minutes > 0) {
-            result.append(buildUnitOfTimes(hours, minutes, "minute", ", "));
+            result.add(buildUnitOfTimes(minutes, "minute"));
         }
 
         if (seconds > 0) {
-            result.append(buildUnitOfTimes(minutes, seconds, "second", " and "));
+            result.add(buildUnitOfTimes(seconds, "second"));
         }
 
-        return result.toString();
+        return appendSeparated(result);
 
     }
 
-    private static String buildUnitOfTimes(int largerUnitTime, int currentUnitTime, String unit, String separateBy) {
+    private static String appendSeparated(List<String> formatDuration) {
+
+        if (formatDuration.size() == 1) {
+            return formatDuration.get(0);
+
+        } else if (formatDuration.size() == 2) {
+            return formatDuration.get(0) + " and " + formatDuration.get(1);
+
+        }
+
+        return formatDuration.get(0) + ", " + formatDuration.get(1) + " and " + formatDuration.get(2);
+
+    }
+
+    private static String buildUnitOfTimes(int currentUnitTime, String unit) {
+
         String space = " ";
-        return (largerUnitTime > 0 ? separateBy : "") +
-                currentUnitTime + space + (currentUnitTime > 1 ? unit.concat("s") : unit);
+
+        return currentUnitTime + space + (currentUnitTime > 1 ? unit.concat("s") : unit);
+
     }
 }
