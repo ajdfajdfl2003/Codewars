@@ -5,7 +5,6 @@ import java.util.List;
 
 public class TimeFormatter {
     public static String formatDuration(int seconds) {
-
         if (seconds == 0) {
             return "now";
         }
@@ -16,11 +15,9 @@ public class TimeFormatter {
         int transToSeconds = seconds - transToDays * 86400 - transToHours * 3600 - transToMinutes * 60;
 
         return buildDurationFormat(transToDays, transToHours, transToMinutes, transToSeconds);
-
     }
 
     private static String buildDurationFormat(int days, int hours, int minutes, int seconds) {
-
         List<String> result = new ArrayList<>();
 
         if (days > 0) {
@@ -40,31 +37,31 @@ public class TimeFormatter {
         }
 
         return appendSeparated(result);
-
     }
 
     private static String appendSeparated(List<String> formatDuration) {
+        StringBuilder result = new StringBuilder();
 
-        if (formatDuration.size() == 1) {
-            return formatDuration.get(0);
+        int sizeOfDuration = formatDuration.size();
+        for (int i = 0; i < sizeOfDuration; i++) {
 
-        } else if (formatDuration.size() == 2) {
-            return formatDuration.get(0) + " and " + formatDuration.get(1);
+            result.append(formatDuration.get(i));
 
-        } else if (formatDuration.size() == 3) {
-            return formatDuration.get(0) + ", " + formatDuration.get(1) + " and " + formatDuration.get(2);
+            if (sizeOfDuration - i > 2) {
+                result.append(", ");
 
+            } else if (sizeOfDuration - i == 2) {
+                result.append(" and ");
+
+            }
         }
 
-        return formatDuration.get(0) + ", " + formatDuration.get(1) + ", " + formatDuration.get(2) + " and " + formatDuration.get(3);
-
+        return result.toString();
     }
 
     private static String buildUnitOfTimes(int currentUnitTime, String unit) {
-
         String space = " ";
 
         return currentUnitTime + space + (currentUnitTime > 1 ? unit.concat("s") : unit);
-
     }
 }
