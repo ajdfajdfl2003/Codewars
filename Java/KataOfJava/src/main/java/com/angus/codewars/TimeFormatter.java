@@ -51,9 +51,12 @@ public class TimeFormatter {
         } else if (formatDuration.size() == 2) {
             return formatDuration.get(0) + " and " + formatDuration.get(1);
 
+        } else if (formatDuration.size() == 3) {
+            return formatDuration.get(0) + ", " + formatDuration.get(1) + " and " + formatDuration.get(2);
+
         }
 
-        return formatDuration.get(0) + ", " + formatDuration.get(1) + " and " + formatDuration.get(2);
+        return formatDuration.get(0) + ", " + formatDuration.get(1) + ", " + formatDuration.get(2) + " and " + formatDuration.get(3);
 
     }
 
