@@ -9,16 +9,21 @@ public class TimeFormatter {
             return "now";
         }
 
-        int transToDays = seconds / 86400;
-        int transToHours = (seconds - transToDays * 86400) / 3600;
-        int transToMinutes = (seconds - transToDays * 86400 - transToHours * 3600) / 60;
-        int transToSeconds = seconds - transToDays * 86400 - transToHours * 3600 - transToMinutes * 60;
+        int transToYears = seconds / 31536000;
+        int transToDays = (seconds - transToYears * 31536000) / 86400;
+        int transToHours = (seconds - transToYears * 31536000 - transToDays * 86400) / 3600;
+        int transToMinutes = (seconds - transToYears * 31536000 - transToDays * 86400 - transToHours * 3600) / 60;
+        int transToSeconds = seconds - transToYears * 31536000 - transToDays * 86400 - transToHours * 3600 - transToMinutes * 60;
 
-        return buildDurationFormat(transToDays, transToHours, transToMinutes, transToSeconds);
+        return buildDurationFormat(transToYears, transToDays, transToHours, transToMinutes, transToSeconds);
     }
 
-    private static String buildDurationFormat(int days, int hours, int minutes, int seconds) {
+    private static String buildDurationFormat(int years, int days, int hours, int minutes, int seconds) {
         List<String> result = new ArrayList<>();
+
+        if (years > 0) {
+            result.add(buildUnitOfTimes(years, "year"));
+        }
 
         if (days > 0) {
             result.add(buildUnitOfTimes(days, "day"));

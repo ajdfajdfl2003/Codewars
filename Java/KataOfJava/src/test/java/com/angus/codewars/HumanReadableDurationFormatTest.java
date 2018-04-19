@@ -54,4 +54,9 @@ public class HumanReadableDurationFormatTest {
     public void testFormatDuration_1day_2hours_2seconds() {
         assertEquals("1 day, 2 hours and 2 seconds", TimeFormatter.formatDuration(93602));
     }
+
+    @Test
+    public void testFormatDuration_1year() {
+        assertEquals("1 year", TimeFormatter.formatDuration(31536000));
+    }
 }
